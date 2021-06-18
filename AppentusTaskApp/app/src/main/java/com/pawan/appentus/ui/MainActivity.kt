@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -61,13 +62,9 @@ class MainActivity : AppCompatActivity() {
             }
 
             is ResponseStatus.Loader -> if (it.isLoading) {
-//                shimmerFrameLayout.visibility = View.VISIBLE
-//                shimmerFrameLayout.startShimmer()
                 progressBar.visibility = View.VISIBLE
                 rvAuthors.visibility = View.GONE
             } else {
-//                shimmerFrameLayout.visibility = View.GONE
-//                shimmerFrameLayout.stopShimmer()
                 progressBar.visibility = View.GONE
                 rvAuthors.visibility = View.VISIBLE
             }
